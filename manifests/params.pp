@@ -97,6 +97,12 @@ class yumrepos::params {
   $puppetlabs_deps_includepkgs = absent
   $puppetlabs_deps_exclude = absent
 
+  $puppetlabs_latest_url = "http://yum.puppetlabs.com/el/${::operatingsystemmajrelease}/PC1/${::architecture}"
+  $puppetlabs_latest_enabled = '1'
+  $puppetlabs_latest_gpgcheck = '1'
+  $puppetlabs_latest_includepkgs = absent
+  $puppetlabs_latest_exclude = absent
+
   # Varnish 3 Settings.
   $varnish3_url = "http://repo.varnish-cache.org/redhat/varnish-3.0/el${::operatingsystemmajrelease}/${::architecture}"
   $varnish3_enabled = '1'
@@ -195,4 +201,24 @@ class yumrepos::params {
   $newrelic_gpgcheck = '1'
   $newrelic_includepkgs = absent
   $newrelic_exclude = absent
+
+  # Docker Settings.
+  $docker_short_name = $::operatingsystem ? {
+    'CentOS' => 'centos',
+    'Fedora' => 'centos',
+    'Amazon' => 'centos',
+    'OpenSuSE'=> 'opensuse',
+    'OracleLinux' => 'oraclelinux',
+    default  => undef
+  }
+  if $docker_short_name == undef {
+    fail('Unsupported O/S for docker')
+  }
+
+  $docker_url = "https://yum.dockerproject.org/repo/main/${docker_short_name}/${::operatingsystemmajrelease}"
+  $docker_enabled = '1'
+  $docker_gpgcheck = '1'
+  $docker_includepkgs = absent
+  $docker_exclude = absent
+  
 }
