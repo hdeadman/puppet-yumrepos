@@ -204,8 +204,9 @@ class yumrepos::params {
 
   # Docker Settings.
   $docker_short_name = $::operatingsystem ? {
+    'RedHat' => 'centos',
     'CentOS' => 'centos',
-    'Fedora' => 'centos',
+    'Fedora' => 'fedora',
     'Amazon' => 'centos',
     'OpenSuSE'=> 'opensuse',
     'OracleLinux' => 'oraclelinux',
