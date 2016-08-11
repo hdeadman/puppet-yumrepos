@@ -221,5 +221,11 @@ class yumrepos::params {
   $docker_gpgcheck = '1'
   $docker_includepkgs = absent
   $docker_exclude = absent
+
+  $openscap_url = "https://copr-be.cloud.fedoraproject.org/results/openscapmaint/openscap-latest/epel-${::operatingsystemmajrelease}-\$basearch/"
+  $openscap_enabled = '1'
+  $openscap_gpgcheck = '1'
+  $openscap_includepkgs = absent
+  $openscap_exclude = absent
   
 }
