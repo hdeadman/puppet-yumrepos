@@ -232,9 +232,12 @@ class yumrepos::params {
   $ppas95_password = 'test'
   $ppas95_url_prefix = "http://"
   $ppas95_url_suffix = "yum.enterprisedb.com/9.5/redhat/rhel-\$releasever-\$basearch"
+  $ppas95_tools_url_suffix = "yum.enterprisedb.com/tools/redhat/rhel-\$releasever-\$basearch"
   $ppas95_enabled = '1'
   $ppas95_gpgcheck = '1'
   $ppas95_includepkgs = absent
-  $ppas95_exclude = absent
+  $ppas_exclude = absent
+  $ppas_tools_includepkgs = absent
+  $ppas_tools_exclude = absent  
   
 }
