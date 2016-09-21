@@ -25,6 +25,7 @@ class yumrepos::ppas95 (
   }
 
   $ppas95_url = "${ppas95_url_prefix}${ppas95_username}:${ppas95_password}@${ppas95_url_suffix}"
+  $ppas_tools_url = "${ppas95_url_prefix}${ppas95_username}:${ppas95_password}@${ppas_tools_url_suffix}"
 
   yumrepo { 'ppas95':
     descr       => 'Postgres Plus Advanced Server 9.5 $releasever - $basearch',
