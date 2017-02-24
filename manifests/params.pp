@@ -103,6 +103,12 @@ class yumrepos::params {
   $puppetlabs_latest_includepkgs = absent
   $puppetlabs_latest_exclude = absent
 
+  $rsyslog_url = "http://rpms.adiscon.com/v8-stable/epel-${::operatingsystemmajrelease}/${::architecture}"
+  $rsyslog_enabled = '1'
+  $rsyslog_gpgcheck = '1'
+  $rsyslog_includepkgs = absent
+  $rsyslog_exclude = absent
+
   # Varnish 3 Settings.
   $varnish3_url = "http://repo.varnish-cache.org/redhat/varnish-3.0/el${::operatingsystemmajrelease}/${::architecture}"
   $varnish3_enabled = '1'
